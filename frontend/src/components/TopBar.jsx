@@ -28,7 +28,7 @@ const TopBar = ({ onSettingsClick }) => {
         </div>
         <div>
           <h1 className="text-base font-semibold text-gray-900 font-[Manrope] tracking-tight">
-            SuperTrend Bot
+            ScoreEngine (MDS) Bot
           </h1>
           <p className="text-xs text-gray-500">
             {config.selected_index || "NIFTY"} Options Trading

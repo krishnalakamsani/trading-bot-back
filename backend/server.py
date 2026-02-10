@@ -63,7 +63,7 @@ manager = ConnectionManager()
 async def lifespan(app: FastAPI):
     await init_db()
     await load_config()
-    logger.info(f"[STARTUP] Database initialized, config loaded. Index={config.get('selected_index', 'NIFTY')}, Indicator=SuperTrend")
+    logger.info(f"[STARTUP] Database initialized, config loaded. Index={config.get('selected_index', 'NIFTY')}, Indicator=ScoreEngine (MDS)")
     yield
     logger.info("[SHUTDOWN] Server shutting down")
 
@@ -88,7 +88,7 @@ async def get_status():
 
 @api_router.get("/market/nifty")
 async def get_market_data():
-    """Get market data (index LTP, SuperTrend)"""
+    """Get market data (index LTP, MDS metrics)"""
     return bot_service.get_market_data()
 
 

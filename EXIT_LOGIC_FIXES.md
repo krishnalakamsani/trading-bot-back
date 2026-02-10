@@ -4,7 +4,7 @@
 
 ### Issue 1: MDS Reversal NOT Triggering Exit ❌ → ✅
 
-(Previous notes about SuperTrend-related bugs were migrated to MDS semantics.)
+(Previous notes about legacy SuperTrend-related bugs were migrated to MDS semantics.)
 **Problem:**
 - Code was checking for `self.indicator.st_direction` which doesn't exist
 - Legacy code checked indicator attributes that no longer exist for the ScoreEngine flow
@@ -17,8 +17,8 @@
 st_direction = 0
 if hasattr(self.indicator, 'st_direction'):
     st_direction = self.indicator.st_direction
-elif hasattr(self.indicator, 'supertrend') and hasattr(self.indicator.supertrend, 'direction'):
-    st_direction = self.indicator.supertrend.direction
+elif hasattr(self.indicator, 'legacy_supertrend') and hasattr(self.indicator.legacy_supertrend, 'direction'):
+    st_direction = self.indicator.legacy_supertrend.direction
 
 # AFTER (CORRECT):
 st_direction = getattr(self.indicator, 'direction', 0)
@@ -147,7 +147,7 @@ Make sure your config has these values set:
 - **Lines Modified:** 
   - Line 330: Fixed indicator unpacking (2 values, not 3)
   - Line 573: Added daily max loss check on every tick
-  - Line 625: Removed SuperTrend direction attribute access and replaced with MDS-driven reversal checks
+  - Line 625: Removed legacy SuperTrend direction attribute access and replaced with MDS-driven reversal checks
 - **Methods Modified:**
   - `check_tick_sl()`: Added daily loss check
   - `process_signal_on_close()`: Fixed reversal detection logic
@@ -162,7 +162,7 @@ Make sure your config has these values set:
 - Both could cause significant financial loss
 
 ✅ **Both issues are now FIXED** - bot will exit properly on:
-1. Any SuperTrend reversal
+1. Any MDS reversal
 2. Any daily loss limit breach
 
 **Status:** PRODUCTION READY ✓

@@ -1,0 +1,81 @@
+2026-02-10 23:03:59,820 - database - INFO - [DB] Loaded 15 config entries from database
+2026-02-10 23:03:59,821 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=SuperTrend
+2026-02-10 23:04:31,159 - bot_service - INFO - [CONFIG] Received updates: ['target_points']
+2026-02-10 23:04:31,162 - bot_service - INFO - [CONFIG] Target points changed to: 25.0
+2026-02-10 23:04:31,193 - bot_service - INFO - [CONFIG] Updated: ['target_points']
+2026-02-10 23:04:31,218 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:04:31,222 - bot_service - INFO - [CONFIG] Index changed to: BANKNIFTY
+2026-02-10 23:04:31,255 - bot_service - INFO - [CONFIG] Updated: ['selected_index']
+2026-02-10 23:04:31,277 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:04:31,277 - bot_service - INFO - [CONFIG] Index changed to: NIFTY
+2026-02-10 23:04:31,331 - bot_service - INFO - [CONFIG] Updated: ['selected_index']
+2026-02-10 23:04:31,383 - bot_service - INFO - [CONFIG] Received updates: ['candle_interval']
+2026-02-10 23:04:31,388 - bot_service - INFO - [CONFIG] Candle interval changed to: 60s
+2026-02-10 23:04:32,409 - bot_service - INFO - [CONFIG] Updated: ['candle_interval']
+2026-02-10 23:04:32,431 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:04:32,436 - bot_service - WARNING - [CONFIG] Invalid index: INVALID_INDEX. Available: ['NIFTY', 'BANKNIFTY', 'SENSEX', 'FINNIFTY']
+2026-02-10 23:04:32,466 - bot_service - INFO - [CONFIG] Updated: []
+2026-02-10 23:04:32,479 - bot_service - INFO - [CONFIG] Received updates: ['candle_interval']
+2026-02-10 23:04:32,479 - bot_service - WARNING - [CONFIG] Invalid interval: 7. Valid: [5, 15, 30, 60, 300, 900]
+2026-02-10 23:04:32,508 - bot_service - INFO - [CONFIG] Updated: []
+2026-02-10 23:04:32,525 - bot_service - INFO - [CONFIG] Trading mode changed to: paper
+2026-02-10 23:04:32,545 - bot_service - INFO - [CONFIG] Trading mode changed to: live
+2026-02-10 23:04:32,560 - trading_bot - WARNING - [ERROR] Dhan API credentials not configured
+2026-02-10 23:04:32,561 - bot_service - INFO - [BOT] Start requested: {'status': 'error', 'message': 'Dhan API credentials not configured'}
+2026-02-10 23:04:32,577 - trading_bot - INFO - [BOT] Stopped
+2026-02-10 23:04:32,577 - bot_service - INFO - [BOT] Stop requested: {'status': 'success', 'message': 'Bot stopped'}
+2026-02-10 23:04:32,594 - bot_service - INFO - [BOT] Squareoff requested: {'status': 'error', 'message': 'No open position'}
+2026-02-10 23:05:31,863 - server - INFO - [SHUTDOWN] Server shutting down
+2026-02-10 23:05:34,531 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:05:34,535 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=SuperTrend
+2026-02-10 23:07:47,942 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:07:47,959 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=SuperTrend
+2026-02-10 23:07:48,644 - bot_service - INFO - [CONFIG] Received updates: ['candle_interval']
+2026-02-10 23:07:48,646 - bot_service - WARNING - [CONFIG] Invalid interval: 7. Valid: [5, 15, 30, 60, 300, 900]
+2026-02-10 23:07:48,694 - bot_service - INFO - [CONFIG] Updated: []
+2026-02-10 23:07:48,712 - bot_service - INFO - [CONFIG] Trading mode changed to: paper
+2026-02-10 23:07:48,725 - bot_service - INFO - [CONFIG] Trading mode changed to: live
+2026-02-10 23:07:49,126 - trading_bot - WARNING - [ERROR] Dhan API credentials not configured
+2026-02-10 23:07:49,126 - bot_service - INFO - [BOT] Start requested: {'status': 'error', 'message': 'Dhan API credentials not configured'}
+2026-02-10 23:07:49,132 - trading_bot - INFO - [BOT] Stopped
+2026-02-10 23:07:49,132 - bot_service - INFO - [BOT] Stop requested: {'status': 'success', 'message': 'Bot stopped'}
+2026-02-10 23:07:49,145 - bot_service - INFO - [BOT] Squareoff requested: {'status': 'error', 'message': 'No open position'}
+2026-02-10 23:08:34,720 - bot_service - INFO - [CONFIG] Received updates: ['target_points']
+2026-02-10 23:08:34,726 - bot_service - INFO - [CONFIG] Target points changed to: 25.0
+2026-02-10 23:08:34,740 - bot_service - INFO - [CONFIG] Updated: ['target_points']
+2026-02-10 23:08:34,773 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:08:34,775 - bot_service - INFO - [CONFIG] Index changed to: BANKNIFTY
+2026-02-10 23:08:34,798 - bot_service - INFO - [CONFIG] Updated: ['selected_index']
+2026-02-10 23:08:34,825 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:08:34,827 - bot_service - INFO - [CONFIG] Index changed to: NIFTY
+2026-02-10 23:08:34,847 - bot_service - INFO - [CONFIG] Updated: ['selected_index']
+2026-02-10 23:08:34,872 - bot_service - INFO - [CONFIG] Received updates: ['candle_interval']
+2026-02-10 23:08:34,877 - bot_service - INFO - [CONFIG] Candle interval changed to: 60s
+2026-02-10 23:08:34,898 - bot_service - INFO - [CONFIG] Updated: ['candle_interval']
+2026-02-10 23:08:34,923 - bot_service - INFO - [CONFIG] Received updates: ['selected_index']
+2026-02-10 23:08:34,925 - bot_service - WARNING - [CONFIG] Invalid index: INVALID_INDEX. Available: ['NIFTY', 'BANKNIFTY', 'SENSEX', 'FINNIFTY']
+2026-02-10 23:08:34,957 - bot_service - INFO - [CONFIG] Updated: []
+2026-02-10 23:08:34,961 - bot_service - INFO - [CONFIG] Received updates: ['candle_interval']
+2026-02-10 23:08:34,961 - bot_service - WARNING - [CONFIG] Invalid interval: 7. Valid: [5, 15, 30, 60, 300, 900]
+2026-02-10 23:08:35,001 - bot_service - INFO - [CONFIG] Updated: []
+2026-02-10 23:08:35,013 - bot_service - INFO - [CONFIG] Trading mode changed to: paper
+2026-02-10 23:08:35,021 - bot_service - INFO - [CONFIG] Trading mode changed to: live
+2026-02-10 23:08:35,032 - trading_bot - WARNING - [ERROR] Dhan API credentials not configured
+2026-02-10 23:08:35,032 - bot_service - INFO - [BOT] Start requested: {'status': 'error', 'message': 'Dhan API credentials not configured'}
+2026-02-10 23:08:35,046 - trading_bot - INFO - [BOT] Stopped
+2026-02-10 23:08:35,046 - bot_service - INFO - [BOT] Stop requested: {'status': 'success', 'message': 'Bot stopped'}
+2026-02-10 23:08:35,054 - bot_service - INFO - [BOT] Squareoff requested: {'status': 'error', 'message': 'No open position'}
+2026-02-10 23:17:38,985 - server - INFO - [SHUTDOWN] Server shutting down
+2026-02-10 23:17:42,105 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:17:42,106 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=ScoreEngine (MDS)
+2026-02-10 23:20:16,307 - server - INFO - [SHUTDOWN] Server shutting down
+2026-02-10 23:20:20,515 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:20:20,516 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=ScoreEngine (MDS)
+2026-02-10 23:20:23,252 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:20:23,254 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=ScoreEngine (MDS)
+2026-02-10 23:20:47,108 - server - INFO - [SHUTDOWN] Server shutting down
+2026-02-10 23:20:49,992 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:20:49,992 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=ScoreEngine (MDS)
+2026-02-10 23:23:26,317 - server - INFO - [SHUTDOWN] Server shutting down
+2026-02-10 23:23:28,484 - database - INFO - [DB] Loaded 25 config entries from database
+2026-02-10 23:23:28,484 - server - INFO - [STARTUP] Database initialized, config loaded. Index=NIFTY, Indicator=ScoreEngine (MDS)

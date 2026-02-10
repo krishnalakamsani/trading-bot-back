@@ -26,7 +26,7 @@ Build a full-stack automated options trading bot for Nifty Index using Dhan Trad
 ### Backend
 - [x] FastAPI server with all required endpoints
 - [x] SQLite database for trades and config
-- [x] SuperTrend indicator calculation
+- [x] ScoreEngine (MDS) integration (legacy SuperTrend removed)
 - [x] Trading bot engine with entry/exit logic
 - [x] WebSocket for real-time updates
 - [x] Dhan API integration structure
@@ -86,6 +86,6 @@ Build a full-stack automated options trading bot for Nifty Index using Dhan Trad
 ## Next Tasks
 1. User to configure Dhan API credentials via Settings
 2. Test with paper trading during market hours
-3. Verify SuperTrend signals in live market
+3. Verify ScoreEngine (MDS) signals in live market
 4. Test trailing SL functionality
 5. Consider adding CSV export feature

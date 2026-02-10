@@ -211,7 +211,7 @@ CONTINUE
 
 Every Candle Close:
   ↓
-[Check] SuperTrend reversed? (GREEN→RED or RED→GREEN) → YES → EXIT (ST Reversal)
+[Check] MDS indicated reversal/neutral? → YES → EXIT (MDS Reversal)
   ↓ NO
 CONTINUE
 
@@ -224,7 +224,7 @@ FORCE EXIT ALL POSITIONS
 
 ## EXAMPLE SCENARIOS
 
-### Scenario 1: Normal Entry & SuperTrend Exit
+### Scenario 1: Normal Entry & MDS Exit
 ```
 9:15 AM - Market Opens
 9:45 AM - Candle closes with GREEN signal
@@ -236,7 +236,7 @@ FORCE EXIT ALL POSITIONS
           → SL not hit yet (still above 50)
 
 11:00 AM - Candle closes with RED signal
-        → SuperTrend reversed
+        → MDS indicated reversal
         → EXIT at market price (~95)
         → Result: -5 points loss
 ```
@@ -274,12 +274,12 @@ FORCE EXIT ALL POSITIONS
 ## SUMMARY
 
 **ENTRY:**
-- Wait for GREEN/RED signal from SuperTrend on candle close
+- Wait for GREEN/RED confirmation from MDS on candle close
 - Market must be open, before 3:20 PM
 - Position must be closed (no doubling)
 
 **EXIT:**
-- SuperTrend reversal (PRIMARY)
+- MDS reversal (PRIMARY)
 - Initial SL 50 pts (ALWAYS ACTIVE)
 - Target (if enabled)
 - Trailing SL (if enabled)

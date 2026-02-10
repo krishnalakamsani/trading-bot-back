@@ -39,8 +39,12 @@ function App() {
   });
   const [marketData, setMarketData] = useState({
     ltp: 0,
-    supertrend_signal: null,
-    supertrend_value: 0,
+    mds_ready: false,
+    mds_direction: null,
+    mds_score: 0,
+    mds_slope: 0,
+    mds_confirm_count: 0,
+    mds_slow_mom: 0,
     selected_index: "NIFTY"
   });
   const [position, setPosition] = useState(null);
@@ -134,8 +138,12 @@ function App() {
             const currentConfig = configRef.current;
             setMarketData({
               ltp: update.index_ltp,
-              supertrend_signal: update.supertrend_signal,
-              supertrend_value: update.supertrend_value,
+              mds_ready: update.mds_ready,
+              mds_direction: update.mds_direction,
+              mds_score: update.mds_score,
+              mds_slope: update.mds_slope,
+              mds_confirm_count: update.mds_confirm_count,
+              mds_slow_mom: update.mds_slow_mom,
               selected_index: update.selected_index
             });
             setBotStatus(prev => ({

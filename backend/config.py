@@ -32,9 +32,9 @@ bot_state = {
     "max_drawdown": 0.0,
     "selected_index": "NIFTY",  # Current selected index
 
-    # Higher timeframe (HTF) SuperTrend filter state
-    "htf_supertrend_signal": None,
-    "htf_supertrend_value": 0.0,
+    # Higher timeframe (HTF) filter state (generic)
+    "htf_filter_signal": None,
+    "htf_filter_value": 0.0,
     "htf_signal_status": "waiting",
 
     # MDS (ScoreEngine) runtime metrics (populated via API or external engine when using strategy='mds')
@@ -61,18 +61,18 @@ config = {
     "trail_step": 0,  # Trailing step size (0 = disabled)
     # Profit Taking
     "target_points": 0,  # Target profit points (0 = disabled)
-    # Signal & Indicator Settings (SuperTrend only)
+    # Signal & Indicator Settings (legacy SuperTrend keys retained for compatibility)
     "supertrend_period": 7,
     "supertrend_multiplier": 4,
     "candle_interval": 5,  # seconds (default 5s)
     "selected_index": "NIFTY",  # Default index
     # Trade protection settings
     "min_trade_gap": 0,  # Minimum seconds between trades (0 = disabled)
-    "trade_only_on_flip": True,  # Only trade on SuperTrend direction change
+    "trade_only_on_flip": True,  # Only trade on indicator direction change (legacy SuperTrend semantics)
     "risk_per_trade": 0,  # Risk amount per trade (0 = disabled, uses fixed qty)
 
     # Multi-timeframe (MTF) filter
-    "htf_filter_enabled": True,  # If True: require HTF SuperTrend direction alignment for LTF entries
+    "htf_filter_enabled": True,  # If True: require HTF direction alignment (legacy SuperTrend semantics)
     "htf_filter_timeframe": 60,  # seconds (default 1m)
 
     # Exit protection

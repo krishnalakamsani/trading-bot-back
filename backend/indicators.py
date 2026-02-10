@@ -316,14 +316,14 @@ class ADX:
         return adx, signal
 
 
-class SuperTrendMACD:
-    """SuperTrend Only Strategy - Simple Entry Logic
+class LegacySuperTrendMACD:
+    """Legacy SuperTrend-only helper (kept for analysis).
     
-    Entry: When SuperTrend direction flips
+    Entry: When legacy SuperTrend direction flips
     - Flips to GREEN (direction=1) → Generate GREEN signal (BUY CE)
     - Flips to RED (direction=-1) → Generate RED signal (SELL PE)
     
-    Exit: When SuperTrend flips back in opposite direction
+    Exit: When legacy SuperTrend flips back in opposite direction
     MACD is shown for reference only, not used for signal generation
     """
     def __init__(self, supertrend_period=7, supertrend_mult=4, macd_fast=12, macd_slow=26, macd_signal=9):
@@ -338,7 +338,8 @@ class SuperTrendMACD:
         self.last_st_direction = None
     
     def add_candle(self, high, low, close):
-        """Add candle and generate SuperTrend signal on direction flip"""
+        """Add candle and generate legacy SuperTrend signal on direction flip"""
+        # Get legacy SuperTrend value and signal
         # Get SuperTrend value and signal
         st_value, st_signal = self.supertrend.add_candle(high, low, close)
         
@@ -357,7 +358,7 @@ class SuperTrendMACD:
         else:
             macd_line = fast_ema - slow_ema
         
-        # Check if SuperTrend direction changed (flip detected)
+        # Check if legacy SuperTrend direction changed (flip detected)
         current_direction = self.supertrend.direction
         final_signal = None
         

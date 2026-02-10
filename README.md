@@ -34,7 +34,7 @@ Trading-Bot/
 ├── backend/                 # Python FastAPI server
 │   ├── dhan_api.py         # Dhan broker API wrapper
 │   ├── trading_bot.py      # Core trading engine
-│   ├── indicators.py       # Utility indicators (SuperTrend, MACD, etc) - kept for analysis
+│   ├── indicators.py       # Utility indicators (MACD, etc) - kept for analysis
 │   ├── database.py         # SQLite operations
 │   ├── config.py           # Configuration & state
 │   └── server.py           # FastAPI routes
@@ -171,7 +171,7 @@ Access at: `http://localhost:3000`
 
 **Dashboard shows**:
 - Current index LTP (NIFTY/BANKNIFTY/etc)
-- SuperTrend signal (GREEN=Buy CE, RED=Buy PE)
+- MDS signal (GREEN=Buy CE, RED=Buy PE)
 - Current open position (strike, entry, P&L)
 - Daily summary (trades, P&L, max drawdown)
 - Recent trade logs

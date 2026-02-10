@@ -342,8 +342,8 @@ async def get_trade_analytics() -> dict:
             'trades': trades
         }
 async def save_candle_data(candle_number: int, index_name: str, high: float, low: float, close: float, 
-                          supertrend_value: float, macd_value: float, signal_status: str):
-    """Save candle data for analysis"""
+                          indicator_value: float, macd_value: float, signal_status: str):
+    """Save candle data for analysis (indicator_value maps to DB column `supertrend_value` for compatibility)"""
     try:
         from datetime import datetime, timezone
         timestamp = datetime.now(timezone.utc).isoformat()
@@ -353,7 +353,7 @@ async def save_candle_data(candle_number: int, index_name: str, high: float, low
                 '''INSERT INTO candle_data 
                    (timestamp, candle_number, index_name, high, low, close, supertrend_value, macd_value, signal_status, created_at)
                    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)''',
-                (timestamp, candle_number, index_name, high, low, close, supertrend_value, macd_value, signal_status, timestamp)
+                (timestamp, candle_number, index_name, high, low, close, indicator_value, macd_value, signal_status, timestamp)
             )
             await db.commit()
     except Exception as e:

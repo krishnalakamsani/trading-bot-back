@@ -68,7 +68,7 @@ def get_bot_status() -> dict:
         "selected_index": config['selected_index'],
         "candle_interval": config['candle_interval'],
         # Strategy
-        "strategy": config.get('strategy', 'supertrend'),
+        "strategy": config.get('strategy', 'score_mds'),
         "mds_confirm_needed": int(config.get('mds_confirm_needed', 2))
     }
 
@@ -80,14 +80,8 @@ def get_market_data() -> dict:
     
     return {
         "ltp": bot_state['index_ltp'],
-        "supertrend_signal": bot_state['last_supertrend_signal'],
-        "supertrend_value": bot_state['supertrend_value'],
-        "htf_supertrend_signal": bot_state.get('htf_supertrend_signal'),
-        "htf_supertrend_value": bot_state.get('htf_supertrend_value', 0.0),
-        "macd_value": bot_state['macd_value'],
-        "signal_status": bot_state['signal_status'],
         "htf_signal_status": bot_state.get('htf_signal_status', 'waiting'),
-        # MDS metrics (if strategy=='mds')
+        # MDS metrics (ScoreEngine)
         "mds_ready": bot_state.get('mds_ready', False),
         "mds_direction": bot_state.get('mds_direction'),
         "mds_score": bot_state.get('mds_score', 0.0),
@@ -156,7 +150,7 @@ def get_config() -> dict:
         "trail_step": config['trail_step'],
         "target_points": config['target_points'],
         "risk_per_trade": config.get('risk_per_trade', 0),
-        # Indicator Settings (SuperTrend only)
+        # Indicator Settings (legacy SuperTrend keys retained for compatibility)
         "mds_confirm_needed": int(config.get('mds_confirm_needed', 2)),
 
         # MTF filter

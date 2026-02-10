@@ -28,16 +28,6 @@ class StrategyRuntime:
         return False
 
 
-class SuperTrendRuntime(StrategyRuntime):
-    async def on_closed_candle(self, bot: Any, ctx: ClosedCandleContext) -> bool:
-        # Delegate to existing SuperTrend handler on the bot (maintains previous behavior)
-        try:
-            exited = await bot.process_signal_on_close(ctx.signal, float(ctx.close), flipped=ctx.flipped)
-            return bool(exited)
-        except Exception:
-            return False
-
-
 class ScoreMdsRuntime(StrategyRuntime):
     async def on_closed_candle(self, bot: Any, ctx: ClosedCandleContext) -> bool:
         if ctx.mds_snapshot is None:
@@ -61,7 +51,5 @@ class ScoreMdsRuntime(StrategyRuntime):
 
 
 def build_strategy_runtime(indicator_type: Optional[str]) -> StrategyRuntime:
-    it = str(indicator_type or '').strip().lower()
-    if it == 'score_mds':
-        return ScoreMdsRuntime()
-    return SuperTrendRuntime()
+    # Strategy runtime factory - only ScoreMdsRuntime is supported now
+    return ScoreMdsRuntime()

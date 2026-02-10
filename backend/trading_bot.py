@@ -400,7 +400,7 @@ class TradingBot:
                             htf_value, htf_signal = self.htf_indicator.add_candle(htf_high, htf_low, htf_close)
 
                             if htf_value:
-                                bot_state['htf_supertrend_value'] = htf_value if isinstance(htf_value, (int, float)) else str(htf_value)
+                                bot_state['htf_filter_value'] = htf_value if isinstance(htf_value, (int, float)) else str(htf_value)
 
                                 if htf_signal == "GREEN":
                                     bot_state['htf_signal_status'] = "buy"
@@ -410,7 +410,7 @@ class TradingBot:
                                     bot_state['htf_signal_status'] = "waiting"
 
                                 if htf_signal:
-                                    bot_state['htf_supertrend_signal'] = htf_signal
+                                    bot_state['htf_filter_signal'] = htf_signal
 
                                 logger.info(
                                     f"[HTF CANDLE CLOSE #{htf_candle_number}] {index_name} | "
@@ -465,11 +465,11 @@ class TradingBot:
                             logger.info(
                                 f"[CANDLE CLOSE #{candle_number}] {index_name} | "
                                 f"H={high:.2f} L={low:.2f} C={close:.2f} | "
-                                f"ST={indicator_value:.2f} | "
+                                f"Indicator={indicator_value:.2f} | "
                                 f"{signal_status}"
                             )
                             
-                            # Save candle data for analysis
+                            # Save candle data for analysis (indicator_value stored in DB column `supertrend_value` for compatibility)
                             from database import save_candle_data
                             await save_candle_data(
                                 candle_number=candle_number,
@@ -477,22 +477,15 @@ class TradingBot:
                                 high=high,
                                 low=low,
                                 close=close,
-                                supertrend_value=indicator_value,
+                                indicator_value=indicator_value,
                                 macd_value=macd_value,
-                                signal_status=bot_state['signal_status']
+                                signal_status=bot_state.get('signal_status', 'waiting')
                             )
                         
                         if signal:
-                            prev_signal = bot_state.get('last_supertrend_signal')
+                            prev_signal = bot_state.get('last_indicator_signal')
                             flipped = prev_signal is None or signal != prev_signal
-                            bot_state['last_supertrend_signal'] = signal
-                            
-                            # Check trailing SL/Target on candle close ONLY
-                            if self.current_position:
-                                option_ltp = bot_state['current_option_ltp']
-                                sl_hit = await self.check_trailing_sl_on_close(option_ltp)
-                                
-                                if sl_hit:
+                            bot_state['last_indicator_signal'] = signal
                                     self.last_exit_candle_time = current_candle_time
                             
                             # Trading logic - entries/exits
@@ -504,7 +497,7 @@ class TradingBot:
                             
                             if can_trade:
                                 # If MDS strategy is active - run MDS entry/exit logic instead of SuperTrend entries
-                                if config.get('strategy', 'supertrend').lower() == 'mds':
+                                if config.get('strategy', 'score_mds').lower() in ('score_mds', 'mds'):
                                     try:
                                         exited = await self.process_signal_on_close(signal, close, flipped=flipped)
                                         if exited:

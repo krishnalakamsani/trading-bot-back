@@ -17,7 +17,7 @@ class ConfigUpdate(BaseModel):
     selected_index: Optional[str] = None
     candle_interval: Optional[int] = None  # Timeframe in seconds
     min_trade_gap: Optional[int] = None  # Minimum seconds between trades
-    trade_only_on_flip: Optional[bool] = None  # Only trade on SuperTrend flip
+    trade_only_on_flip: Optional[bool] = None  # Only trade on indicator flip (legacy SuperTrend semantics)
     trading_enabled: Optional[bool] = None  # If False: no new entries
 
     # Multi-timeframe (MTF) filter
